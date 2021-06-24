@@ -97,6 +97,21 @@ class _MyHomePageState extends State<MyHomePage> {
                         side: BorderSide(width: 3, color: Colors.black)),
                   ),
                 ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10.0),
+                  child: RaisedButton.icon(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/deneme');
+                    },
+                    icon: Icon(Icons.person),
+                    label: Text('Denemeye git', style: TextStyle(fontSize: 20.0),),
+                    color: Colors.red,
+                    padding: EdgeInsets.all(15.0),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(24),
+                        side: BorderSide(width: 3, color: Colors.black)),
+                  ),
+                ),
               ]),
         ),
       ),

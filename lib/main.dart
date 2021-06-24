@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:oyunkultur/deneme.dart';
+import 'package:oyunkultur/giris.dart';
+
 import 'Anamenu/Hesapmerkez/Geometriksekil/daire.dart';
 import 'Anamenu/Hesapmerkez/Geometriksekil/dortgen.dart';
 import 'Anamenu/Hesapmerkez/Geometriksekil/ucgen.dart';
@@ -12,9 +15,13 @@ import 'Anamenu/formuller.dart';
 import 'Anamenu/hakkinda.dart';
 import 'Anamenu/hesapmerkez.dart';
 import 'Anamenu/testler.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 
-void main() {
+
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -31,6 +38,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => SplashScreen(),
+        '/giris': (context) => GirisPage(),
         '/home': (context) => MyHomePage(),
         '/hesap': (context) => HesapPage(),
         '/hakkinda': (context) => Hakkinda(),
@@ -43,8 +51,11 @@ class MyApp extends StatelessWidget {
         '/denklem': (context) => Denklem(),
         '/basit': (context) => Basit(),
         '/bitir': (context) => Bitir(),
+        '/deneme': (context) => Deneme(),
+
       },
     );
   }
 }
+
 
